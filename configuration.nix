@@ -68,12 +68,12 @@
     };
 
     plasma6.excludePackages = [
-      pkgs.kdePackages.konsole
-      pkgs.kdePackages.kate
-      pkgs.kdePackages.kwalletmanager
-      pkgs.kdePackages.khelpcenter
-      pkgs.xterm
       pkgs.cups
+      pkgs.kdePackages.kate
+      pkgs.kdePackages.khelpcenter
+      pkgs.kdePackages.konsole
+      pkgs.kdePackages.kwalletmanager
+      pkgs.xterm
     ];
   };
 
