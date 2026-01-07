@@ -1,0 +1,16 @@
+{ pkgs, ... }:
+
+{
+
+  users.users."fan" =
+    {
+      isNormalUser = true;
+      extraGroups =
+        [
+          "networkmanager"
+          "wheel"
+        ];
+      shell = pkgs.bash;
+    };
+
+}
