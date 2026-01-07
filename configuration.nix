@@ -5,7 +5,7 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./users.nix
+      ./users-configuration.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -31,16 +31,23 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  services.xserver.enable = true;
+  services.xserver = {
+    enable = true;
+    excludePackages = with pkgs;
+    [
+      xterm
+    ];
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
+  };
 
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
+  services.printing.enable = false;
+  
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -50,10 +57,14 @@
     pulse.enable = true;
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    warnUndeclaredOptions = true;
+  };
 
   environment = {
-    systemPackages = with pkgs; [
+    systemPackages = with pkgs;
+    [
       alacritty
       brave
       code-cursor
@@ -63,17 +74,17 @@
       telegram-desktop
     ];
     
-    shellAliases = {
+    shellAliases =
+    {
       sudo-cursor = "sudo cursor --no-sandbox --user-data-dir /tmp/cursor_user_data";
     };
 
-    plasma6.excludePackages = [
-      pkgs.cups
-      pkgs.kdePackages.kate
-      pkgs.kdePackages.khelpcenter
-      pkgs.kdePackages.konsole
-      pkgs.kdePackages.kwalletmanager
-      pkgs.xterm
+    plasma6.excludePackages = with pkgs.kdePackages;
+    [
+      kate
+      khelpcenter
+      konsole
+      plasma-browser-integration
     ];
   };
 
