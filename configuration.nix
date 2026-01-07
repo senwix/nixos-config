@@ -5,7 +5,7 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./password.nix
+      ./users.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -35,7 +35,6 @@
 
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-  environment.plasma6.excludePackages = [ pkgs.kdePackages.konsole pkgs.kdePackages.kate pkgs.kdePackages.kwalletmanager pkgs.kdePackages.khelpcenter pkgs.xterm pkgs.cups ];
 
   services.xserver.xkb = {
     layout = "us";
@@ -51,22 +50,32 @@
     pulse.enable = true;
   };
 
-  users.users.fan = {
-    isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" ];
-  };
-
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    alacritty
-    brave
-    code-cursor
-    fastfetch
-    neofetch
-    nodejs
-    telegram-desktop
-  ];
+  environment = {
+    systemPackages = with pkgs; [
+      alacritty
+      brave
+      code-cursor
+      fastfetch
+      neofetch
+      nodejs
+      telegram-desktop
+    ];
+    
+    shellAliases = {
+      sudo-cursor = "sudo cursor --no-sandbox --user-data-dir /tmp/cursor_user_data";
+    };
+
+    plasma6.excludePackages = [
+      pkgs.kdePackages.konsole
+      pkgs.kdePackages.kate
+      pkgs.kdePackages.kwalletmanager
+      pkgs.kdePackages.khelpcenter
+      pkgs.xterm
+      pkgs.cups
+    ];
+  };
 
   system.stateVersion = "25.11";
 
