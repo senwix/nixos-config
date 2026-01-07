@@ -4,7 +4,8 @@
   
   imports =
     [
-      ./environment.nix
+      ./packages.nix
+      ./shell.nix
       ./services.nix
       ./users.nix
 

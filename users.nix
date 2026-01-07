@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
 
@@ -10,7 +10,6 @@
           "networkmanager"
           "wheel"
         ];
-      shell = pkgs.bash;
     };
 
 }
