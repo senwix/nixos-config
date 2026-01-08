@@ -8,10 +8,13 @@
         [
           alacritty
           brave
+          burpsuite
           code-cursor
+          dirb
           fastfetch
-          neofetch
+          nmap
           nodejs
+          obsidian
           telegram-desktop
         ];
     };

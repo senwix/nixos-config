@@ -7,8 +7,11 @@
       enable = true;
       shellAliases =
         {
+          c = "clear";
           ll = "ls -alh";
           la = "ls -a";
+          ff = "fastfetch";
+          nf = "neofetch";
           bt = "sudo nixos-rebuild test";
           bs = "sudo nixos-rebuild switch";
           bsr = "sudo nixos-rebuild switch --rollback";
