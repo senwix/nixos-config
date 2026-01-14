@@ -14,6 +14,9 @@
 
     environment.systemPackages = with pkgs.kdePackages;
       [
+        discover
+        dragon
+        kdenlive
         kwrited
       ];
 
