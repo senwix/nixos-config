@@ -9,6 +9,8 @@
       displayManager.sddm.enable = true;
 
       printing.enable = false;
+
+      flatpak.enable = true;
       
       pulseaudio.enable = false;
       pipewire =

@@ -15,8 +15,11 @@
           fastfetch
           nmap
           nodejs
+          obs-studio
           obsidian
           telegram-desktop
+          vesktop
+          virtualbox
         ];
     };
 
