@@ -11,10 +11,11 @@
           ll = "ls -alh";
           la = "ls -a";
           ff = "fastfetch";
-          nf = "neofetch";
           bt = "sudo nixos-rebuild test";
           bs = "sudo nixos-rebuild switch";
           bsr = "sudo nixos-rebuild switch --rollback";
+          sdl = "sudo rm -rf";
+          snw = "sudo echo >";
           sudo-cursor = "sudo cursor --no-sandbox --user-data-dir /tmp/cursor_user_data";
         };
     };
