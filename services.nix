@@ -6,6 +6,7 @@
     {
       xserver.enable = false;
 
+      displayManager.sddm.wayland.enable = true;
       displayManager.sddm.enable = true;
 
       printing.enable = false;

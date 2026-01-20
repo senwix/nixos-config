@@ -8,7 +8,7 @@
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "uas" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
-  boot.kernelParams = [ "snd_hda_intel.dmic_detect=0" ];
+  boot.kernelParams = [ "snd_hda_intel.dmic_detect=0" "snd_hda_intel.dmic_denylist=1" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =

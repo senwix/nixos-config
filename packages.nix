@@ -13,6 +13,7 @@
           code-cursor
           dirb
           fastfetch
+          git
           nmap
           nodejs
           obs-studio
@@ -20,6 +21,15 @@
           telegram-desktop
           vesktop
           virtualbox
+
+          kdePackages.okular
+          kdePackages.dolphin
+          kdePackages.plasma-systemmonitor
+          kdePackages.elisa
+          kdePackages.dragon
+          kdePackages.gwenview
+          kdePackages.ark
+          kdePackages.discover
         ];
     };
 

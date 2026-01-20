@@ -4,12 +4,11 @@
   
   imports =
     [
-      ./networking.nix
       ./packages.nix
       ./shell.nix
       ./services.nix
       ./users.nix
-      ./WMs
+      ./hyprland.nix
 
       ./hardware.nix
     ];
@@ -42,6 +41,9 @@
       allowUnfree = true;
       warnUndeclaredOptions = true;
     };
+
+  networking.hostName = "nixos";
+  networking.networkmanager.enable = true;
 
   system.stateVersion = "25.11";
 

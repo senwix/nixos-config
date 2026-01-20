@@ -2,14 +2,16 @@
 
 {
 
-  users.users."fan" =
+  users.users =
     {
-      isNormalUser = true;
-      extraGroups =
-        [
-          "networkmanager"
-          "wheel"
-        ];
+      "fan" =
+        {
+          isNormalUser = true;
+          extraGroups =
+            [
+              "networkmanager"
+              "wheel"
+            ];
+        };
     };
-
 }
