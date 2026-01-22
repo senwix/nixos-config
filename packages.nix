@@ -22,6 +22,8 @@
           vesktop
           virtualbox
 
+          nerd-fonts.jetbrains-mono
+
           kdePackages.okular
           kdePackages.dolphin
           kdePackages.plasma-systemmonitor
